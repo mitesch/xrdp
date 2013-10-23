@@ -27,6 +27,10 @@ AC_ARG_ENABLE(pamuserpass, AS_HELP_STRING([--enable-pamuserpass],
               [Build pam userpass support (default: no)]),
               [pamuserpass=true], [pamuserpass=false])
 AM_CONDITIONAL(SESMAN_PAMUSERPASS, [test x$pamuserpass = xtrue])
+AC_ARG_ENABLE(pamdebian, AS_HELP_STRING([--enable-pamdebian],
+	      [Build with Debian pam config file (default: no)]),
+              [pamdebian=true], [pamdebian=false])
+AM_CONDITIONAL(SESMAN_PAMDEBIAN, [test x$pamdebian = xtrue])
 AC_ARG_ENABLE(xrdpdebug, AS_HELP_STRING([--enable-xrdpdebug],
               [Build debug (default: no)]),
               [xrdpdebug=true], [xrdpdebug=false])

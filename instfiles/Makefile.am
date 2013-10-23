@@ -15,8 +15,10 @@ endif
 
 startscriptdir=$(sysconfdir)/xrdp
 
-startscript_DATA = \
+startscript_SCRIPTS = \
   xrdp.sh \
+
+sysconf_DATA = \
   km-0407.ini \
   km-0409.ini \
   km-040c.ini \
@@ -27,6 +29,4 @@ startscript_DATA = \
 
 # must be tab below
 install-data-hook:
-	chmod 755 $(DESTDIR)$(sysconfdir)/xrdp/xrdp.sh
-	chmod 755 $(DESTDIR)$(sysconfdir)/init.d/xrdp
 	sed -i 's|__BASE__|$(prefix)|' $(DESTDIR)$(sysconfdir)/init.d/xrdp;
